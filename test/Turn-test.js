@@ -25,5 +25,22 @@ describe('Turn', function() {
     const turn = new Turn('dolphin', card);
 
     expect(turn.returnCard()).to.equal(card);
-  })
+  });
+
+  it('should be able to check if the user guessed the correct answer', function() {
+    const turn = new Turn('sea otter', card);
+
+    // need happy and sad path
+    expect(turn.evaluateGuess()).to.equal(true);
+  });
+
+  it('should be able to check if the user guessed the incorrect answer', function() {
+    const turn = new Turn('whale', card);
+
+    // need happy and sad path
+    expect(turn.evaluateGuess()).to.equal(false);
+  });
+
+
+
 })
