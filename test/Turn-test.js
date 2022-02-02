@@ -44,7 +44,6 @@ describe('Turn', function() {
 
     turn.evaluateGuess();
 
-    expect(turn.feedback).to.equal('correct!')
     expect(turn.giveFeedback()).to.equal('correct!');
   });
 
