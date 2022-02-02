@@ -37,10 +37,23 @@ describe('Turn', function() {
   it('should be able to check if the user guessed the incorrect answer', function() {
     const turn = new Turn('whale', card);
 
-    // need happy and sad path
     expect(turn.evaluateGuess()).to.equal(false);
   });
 
+  it('should be able to return feedback if the guess is correct', function() {
+    const turn = new Turn('sea otter', card);
 
+    turn.evaluateGuess();
 
+    expect(turn.feedback).to.equal('correct')
+    expect(turn.giveFeedback()).to.equal('correct');
+  })
+
+  it('should be able to return feedback if the guess is incorrect', function() {
+    const turn = new Turn('whale', card);
+
+    turn.evaluateGuess();
+
+    expect(turn.giveFeedback()).to.equal('incorrect');
+  })
 })
