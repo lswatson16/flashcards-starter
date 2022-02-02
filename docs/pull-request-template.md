@@ -15,4 +15,4 @@ Summarize what this PR did. Did these changes fix any issues? Explain.
 # Checklist:
 * [ ] I followed the style guidelines.
 * [ ] I performed a self-review of my code.
-* [ ] I commented my code, particularly in complex areas.
+* [ ] I commented on my code, particularly in complex areas.
