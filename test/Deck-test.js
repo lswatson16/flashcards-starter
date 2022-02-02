@@ -4,9 +4,7 @@ const Deck = require('../src/Deck');
 const Card = require('../src/Card');
 
 describe('Deck', function() {
-  let card1
-  let card2
-  let card3
+  let card1, card2, card3
 
   beforeEach('instantiate Card', function() {
     card1 = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
