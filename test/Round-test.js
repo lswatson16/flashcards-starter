@@ -109,6 +109,19 @@ describe('Round', function() {
 
     expect(round.takeTurn('pug')).to.equal('incorrect!');
     expect(round.takeTurn('dolphin')).to.equal('incorrect!');
+    // console.log(round.turns)
   });
+
+  it('should calculate and return the percentage of correct guesses', function() {
+    const round = new Round(deck);
+
+    expect(round.takeTurn('sea otter')).to.equal('correct!');
+    expect(round.takeTurn('spleen')).to.equal('incorrect!');
+    expect(round.turns).to.equal(2)
+
+    const percentageCorrect = round.calculatePercentCorrect();
+
+    expect(percentageCorrect).to.equal(50);
+  })
 
 })
