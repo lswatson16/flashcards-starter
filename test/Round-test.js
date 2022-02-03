@@ -117,11 +117,25 @@ describe('Round', function() {
 
     expect(round.takeTurn('sea otter')).to.equal('correct!');
     expect(round.takeTurn('spleen')).to.equal('incorrect!');
-    expect(round.turns).to.equal(2)
+    expect(round.turns).to.equal(2);
 
     const percentageCorrect = round.calculatePercentCorrect();
-
     expect(percentageCorrect).to.equal(50);
-  })
+  });
 
+  it('should print to the console that the round is over and the percentage of correct answers', function() {
+    const round = new Round(deck);
+
+    expect(round.takeTurn('sea otter')).to.equal('correct!');
+    expect(round.takeTurn('spleen')).to.equal('incorrect!');
+    expect(round.takeTurn('watching Netflix')).to.equal('incorrect!');
+    expect(round.turns).to.equal(3);
+
+    const percentageCorrect = round.calculatePercentCorrect();
+    expect(percentageCorrect).to.equal(33);
+
+    expect(round.endRound()).to.equal(`** Round over! ** You answered 33% of the questions correctly!`);
+    // reset the round turns to it's default value ??
+    // expect(round.turns).to.equal(0);
+  })
 })

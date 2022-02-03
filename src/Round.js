@@ -28,10 +28,17 @@ class Round {
   }
 
   calculatePercentCorrect() {
-    let results = 100 * (this.incorrectGuesses.length / this.turns);
+    // let results = Math.round(100 * (this.incorrectGuesses.length / this.turns));
+    let results = Math.round(100 * ((this.turns - this.incorrectGuesses.length) / this.turns));
+    // let roundedResults = Math.round(results);
     return results
   }
 
+  endRound() {
+    if (this.turns === 3) {
+      return `** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`;
+    }
+  }
 }
 
 module.exports = Round;
