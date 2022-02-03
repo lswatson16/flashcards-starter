@@ -3,9 +3,10 @@ const expect = chai.expect;
 const Card = require('../src/Card');
 const Turn = require('../src/Turn');
 
-let card
 
 describe('Turn', function() {
+  let card
+
   beforeEach('instantiate Card', function() {
     card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
   });
