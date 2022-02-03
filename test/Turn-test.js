@@ -6,7 +6,7 @@ const Turn = require('../src/Turn');
 
 describe('Turn', function() {
   let card
-  
+
   beforeEach('instantiate Card', function() {
     card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
   });
