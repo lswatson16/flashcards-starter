@@ -17,11 +17,14 @@ class Round {
     // create a new turn & pass in current card
     const turn = new Turn(guess, currentCard);
     this.turns++;
-    console.log(currentCard.id, "current id")
-    if (guess !== currentCard.correctAnswer) {
+    // console.log(currentCard.id, "current id")
+    if (guess === currentCard.correctAnswer) {
+      return 'correct!';
+    } else {
       this.incorrectGuesses.push(currentCard.id);
+      return 'incorrect!';
     }
-    return turn;
+    // return turn;
   }
 
 }

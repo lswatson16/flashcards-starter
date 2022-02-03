@@ -38,14 +38,14 @@ describe('Round', function() {
     expect(round.returnCurrentCard()).to.deep.equal(card1);
   });
 
-  it('should create new instance of Turn', function() {
-    const round = new Round(deck);
-
-    const turn = round.takeTurn('sea otter')
-
-    expect(turn).to.be.an.instanceof(Turn);
-    expect(turn.guess).to.equal('sea otter');
-  });
+  // it('should create new instance of Turn', function() {
+  //   const round = new Round(deck);
+  //
+  //   // const turn = round.takeTurn('sea otter')
+  //
+  //   // expect(round.takeTurn('sea otter')).to.be.an.instanceof(Turn);
+  //   expect(turn.guess).to.equal('sea otter');
+  // });
 
   it('should start turns at 0', function() {
     const round = new Round(deck);
@@ -95,6 +95,20 @@ describe('Round', function() {
     round.takeTurn('pug');
 
     expect(round.incorrectGuesses).to.deep.equal([currentCard.id]);
+  });
+
+  it('should return feedback when the guess is correct', function() {
+    const round = new Round(deck);
+    // const currentCard = round.returnCurrentCard();
+
+    expect(round.takeTurn('sea otter')).to.equal('correct!');
+  });
+
+  it('should return feedback when the guess is incorrect', function() {
+    const round = new Round(deck);
+
+    expect(round.takeTurn('pug')).to.equal('incorrect!');
+    expect(round.takeTurn('dolphin')).to.equal('incorrect!');
   });
 
 })
