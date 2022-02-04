@@ -12,9 +12,7 @@ class Round {
   }
 
   takeTurn(guess) {
-    // get the current card
     let currentCard = this.returnCurrentCard();
-    // create a new turn & pass in current card
     const turn = new Turn(guess, currentCard);
     this.turns++;
     if (guess === currentCard.correctAnswer) {
