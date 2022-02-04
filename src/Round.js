@@ -12,9 +12,7 @@ class Round {
   }
 
   takeTurn(guess) {
-    // get the current card
     let currentCard = this.returnCurrentCard();
-    // create a new turn & pass in current card
     const turn = new Turn(guess, currentCard);
     this.turns++;
     if (guess === currentCard.correctAnswer) {
@@ -31,9 +29,9 @@ class Round {
   }
 
   endRound() {
-    if (this.turns === 3) {
-      return `** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`;
-    }
+    //this console log is needed to play the game in the Command Line Interface (CLI)
+    console.log(`** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`);
+    return `** Round over! ** You answered ${this.calculatePercentCorrect()}% of the questions correctly!`
   }
 }
 

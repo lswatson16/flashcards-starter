@@ -13,7 +13,6 @@ class Game {
   start() {
     const cards = data.prototypeData.map((element) => {
       const card = new Card(element.id, element.question, element.answers, element.correctAnswer);
-      // console.log(card)
       return card
     });
 
