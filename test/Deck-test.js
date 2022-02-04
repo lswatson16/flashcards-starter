@@ -12,13 +12,23 @@ describe('Deck', function() {
     card3 = new Card(12, 'What is Travis\'s middle name?', ['Lex', 'William', 'Fitzgerald'], 'Fitzgerald');
   });
 
+  it('should be a function', function() {
+    const deck = new Deck();
+    expect(Deck).to.be.a('function');
+  });
+
+  it('should be an instance of Deck', function() {
+    const deck = new Deck();
+    expect(deck).to.be.an.instanceof(Deck);
+  });
+
   it('should be initialized with an array of Card objects', function() {
     const deck = new Deck([card1, card2, card3]);
 
     expect(deck.cards).to.deep.equal([card1, card2, card3]);
   });
 
-  it('should know how many cards are in the deck', function() {
+  it('should count the amount of cards are in the deck', function() {
     const deck = new Deck([card1, card2, card3]);
 
     expect(deck.countCards()).to.equal(3);
